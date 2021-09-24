@@ -4,3 +4,9 @@ services:
     arguments: ['@entity_type.manager', '@database']
     tags:
       - { name: event_subscriber }
+
+  helfi_api_base.partial_migration_subscriber:
+    class: Drupal\helfi_api_base\EventSubscriber\PartialMigrationSubscriber
+    arguments: ['@keyvalue']
+    tags:
+      - { name: event_subscriber }
